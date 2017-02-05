@@ -3,7 +3,7 @@
 Inspired by [the Scala library of the same name](https://github.com/ThoughtWorksInc/each),
 each is a Template Haskell library that transforms expressions containing
 invocations of impure subexpressions into calls to `fmap`, `<*>`, `join`,
-etc. Just mark your impure subexpressions with 'bind' or '~!' and they will be
+etc. Just mark your impure subexpressions with `bind` or `~!` and they will be
 called appropriately, as in this small demo:
 
     ghci> $(each [| "Hello, " ++ (~! getLine) |])

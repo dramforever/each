@@ -24,10 +24,10 @@ library
   exposed-modules:     Each
                      , Each.Invoke
                      , Each.Transform
-  build-depends:       base >= 4.9.0.0 && < 5
-                     , template-haskell >= 2.11.0.0 && < 3
-                     , mtl >= 2.2.1 && < 3
-                     , containers >= 0.5.7.1 && < 1
+  build-depends:       base >= 4.9 && < 5
+                     , template-haskell
+                     , mtl
+                     , containers
   default-language:    Haskell2010
 
 test-suite each-test

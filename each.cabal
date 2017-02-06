@@ -26,7 +26,6 @@ library
                      , Each.Transform
   build-depends:       base >= 4.9 && < 5
                      , template-haskell
-                     , mtl
                      , dlist
   default-language:    Haskell2010
 

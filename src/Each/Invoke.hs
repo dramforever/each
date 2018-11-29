@@ -16,12 +16,14 @@ module Each.Invoke
     , (~!)
     ) where
 
+infixl 0 ~!
+
 -- | Do not use this outside of an each block. Only its name is used, and its
 -- value itself does not make sense.
-bind :: ()
+bind :: a
 bind = error "Do not use this outside of an each block"
 
 -- | Do not use this outside of an each block. Only its name is used, and its
 -- value itself does not make sense.
-(~!) :: ()
+(~!) :: a
 (~!) = error "Do not use this outside of an each block"

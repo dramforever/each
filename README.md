@@ -6,6 +6,7 @@ invocations of impure subexpressions into do-notation. Just mark your impure
 subexpressions with `bind` or `~!` and they will be called appropriately,
 as in this small demo:
 
+    ghci> :m Each
     ghci> $(each [| "Hello, " ++ (~! getLine) |])
     World              <--[keyboard input]
     "Hello, World"
@@ -29,6 +30,7 @@ for detecting pure `let` expressions.
 - Parameters to lambda functions may not be used impurely. This is acceptable,
 but the error message may be confusing:
 
+        ghci> :m Each
         ghci> $(each [| (\x -> bind x) |])
 
         <interactive>:25:3: error:
@@ -50,7 +52,9 @@ issue.
 
 The basic structure of an `each` block is this:
 
-    $(each [| ... |])
+```haskell
+$(each [| ... |])
+```
 
 Inside of this block, three (interchangable) ways are used to mark impure
 subexpressions:
@@ -66,6 +70,7 @@ handled.
 
 A more detailed demo:
 
+    ghci> :m Each
     ghci> :{
         | $(each [|
         |   "Hey it works"
@@ -79,6 +84,7 @@ A more detailed demo:
 
 Nested binds also work as expected.
 
+    ghci> :m Each
     ghci> prompt str = putStrLn str *> getLine
     ghci> $(each [| "Nah just " ++ (~! prompt ("What's " ++ bind getLine ++ "?")) |])
     something          <--[keyboard input]

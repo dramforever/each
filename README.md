@@ -1,5 +1,7 @@
 # each
 
+[![Hackage](https://img.shields.io/hackage/v/each)](https://hackage.haskell.org/package/each)
+
 Inspired by [the Scala library of the same name](https://github.com/ThoughtWorksInc/each),
 each is a Template Haskell library that transforms expressions containing
 invocations of impure subexpressions into do-notation. Just mark your impure
